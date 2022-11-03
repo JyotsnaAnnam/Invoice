@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jyotsna.invoice.gstbilling">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="GST E-Bill"
+        android:supportsRtl="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="com.jyotsna.invoice.gstbilling.BillsActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.jyotsna.invoice.gstbilling.SetupPasswordActivity"
+            android:label="@string/setup_password_activity_title" />
+
+        <provider
+            android:name="com.jyotsna.invoice.gstbilling.data.GSTBillingContentProvider"
+            android:authorities="com.jyotsna.invoice.gstbilling"
+            android:exported="false" />
+
+        <activity
+            android:name="com.jyotsna.invoice.gstbilling.NewBillActivity"
+            android:label="@string/new_bill_activity_title" />
+        <activity
+            android:name="com.jyotsna.invoice.gstbilling.NewBillCustomerActivity"
+            android:label="@string/new_bill_customer_activity_title" />
+        <activity android:name="com.jyotsna.invoice.gstbilling.DetailActivity" />
+        <activity android:name="com.jyotsna.invoice.gstbilling.SavePDFActivity"></activity>
+    </application>
+
+</manifest>
